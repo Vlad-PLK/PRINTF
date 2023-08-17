@@ -3,12 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpolojie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vpolojie <vpolojie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 18:37:04 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/03/24 15:31:14 by vpolojie         ###   ########.fr       */
+/*   Updated: 2023/08/15 17:23:59 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+	ASCII to INTEGER converter function
+	All characters in str are equivalent to a value in the ASCII TABLE.
+	EX :
+	If you want to convert '5' (char) to an int you do : 
+	ASCII VALUE of '5' - ASCII VALUE of '0'
+	'5' = 53 '0' = 48
+	53 - 48 = 5
+*/
+
 int	ft_atoi(const char *str)
 {
 	int		i;
@@ -37,9 +48,4 @@ int	ft_atoi(const char *str)
 		str0 = str0 * -1;
 	return (str0);
 }
-/*int	main(int argc, char **argv)
-{
-	argc = 2;
-	printf("%d\n", atoi(argv[1]));
-	printf("%d\n", ft_atoi(argv[1]));
-}*/
+

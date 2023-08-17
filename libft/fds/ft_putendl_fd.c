@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpolojie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vpolojie <vpolojie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 12:58:35 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/03/23 17:47:25 by vpolojie         ###   ########.fr       */
+/*   Created: 2022/03/26 13:37:07 by vpolojie          #+#    #+#             */
+/*   Updated: 2023/08/15 17:17:10 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-size_t	ft_strlen(const char *str)
+#include "libft.h"
+
+/*
+	write string 's' in the desired file descriptor and add a newline
+*/
+
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
+		write(fd, &s[i], 1);
 		i++;
 	}
-	return (i);
+	ft_putchar_fd('\n', fd);
 }

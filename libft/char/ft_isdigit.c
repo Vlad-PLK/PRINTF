@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpolojie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:09:26 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/03/25 10:10:51 by vpolojie         ###   ########.fr       */
+/*   Created: 2022/03/21 11:42:04 by vpolojie          #+#    #+#             */
+/*   Updated: 2022/03/23 18:00:45 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isprint(int c)
+
+/*
+	ft_isdigit -> checks if c is a digit (1 = true, 0 = false)
+*/
+int	ft_isdigit(int c)
 {
-	if (c >= ' ' && c <= '~')
-	{
+	if (48 <= c && c <= 57)
 		return (1);
-	}
-	return (0);
+	else
+		return (0);
 }
-/*int	main()
-{
-	printf("%d\n", ft_isprint('~'));
-	printf("%d\n", isprint('~'));
-}*/

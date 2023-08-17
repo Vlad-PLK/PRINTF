@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpolojie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:04:48 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/03/23 17:59:11 by vpolojie         ###   ########.fr       */
+/*   Created: 2022/03/26 13:33:12 by vpolojie          #+#    #+#             */
+/*   Updated: 2022/03/28 14:38:48 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include <unistd.h>
+#include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	if ((65 <= c && c <= 90) || (97 <= c && c <= 122))
+	if (nb == -2147483648)
 	{
-		return (1);
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(21474, fd);
+		ft_putnbr_fd(83648, fd);
+	}
+	else if (0 <= nb && nb <= 9)
+		ft_putchar_fd(nb + '0', fd);
+	else if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(nb * (-1), fd);
 	}
 	else
 	{
-		return (0);
-	}
-}
-
-int	ft_isdigit(int c)
-{
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
-}	
-
-int	ft_isalnum(int c)
-{
-	if ((ft_isalpha(c) == 1 || ft_isdigit(c) == 1))
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
 	}
 }

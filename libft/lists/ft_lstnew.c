@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpolojie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vpolojie <vpolojie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/26 13:37:07 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/03/26 13:40:27 by vpolojie         ###   ########.fr       */
+/*   Created: 2023/08/15 19:30:12 by vpolojie          #+#    #+#             */
+/*   Updated: 2023/08/17 11:55:22 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
-{
-	int	i;
+/*
+	ft_lstnew -> allocate a new node, set the content and point to NULL
+*/
 
-	i = 0;
-	while (s[i] != '\0')
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*lst;
+
+	lst = malloc(sizeof(t_list));
+	if (!lst)
+		return (NULL);
+	else
 	{
-		write(fd, &s[i], 1);
-		i++;
+		lst->content = content;
+		lst->next = NULL;
 	}
-	ft_putchar_fd('\n', fd);
+	return (lst);
 }

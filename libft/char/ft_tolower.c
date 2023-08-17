@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpolojie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vpolojie <vpolojie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 12:14:44 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/03/23 17:59:46 by vpolojie         ###   ########.fr       */
+/*   Created: 2022/03/21 11:19:18 by vpolojie          #+#    #+#             */
+/*   Updated: 2023/08/15 17:11:26 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isascii(int c)
+
+/*
+	ft_tolower -> transform c into a lowercase character if it's a letter
+*/
+
+int	ft_tolower(int c)
 {
-	if ((0 <= c && c <= 127))
+	if (65 <= c && c <= 90)
 	{
-		return (1);
+		c = c + 32;
+		return (c);
 	}
 	else
 	{
-		return (0);
+		return (c);
 	}
 }

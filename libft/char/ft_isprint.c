@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpolojie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 11:33:05 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/03/28 13:00:39 by vpolojie         ###   ########.fr       */
+/*   Created: 2022/03/21 12:09:26 by vpolojie          #+#    #+#             */
+/*   Updated: 2022/03/25 10:10:51 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isalpha(int c)
+
+/*
+	ft_isprint -> checks if c is a printable character
+*/
+
+int	ft_isprint(int c)
 {
-	if ((65 <= c && c <= 90) || (97 <= c && c <= 122))
+	if (c >= ' ' && c <= '~')
 	{
 		return (1);
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }

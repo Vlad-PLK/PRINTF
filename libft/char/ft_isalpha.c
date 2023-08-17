@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpolojie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 11:42:04 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/03/23 18:00:45 by vpolojie         ###   ########.fr       */
+/*   Created: 2022/03/21 11:33:05 by vpolojie          #+#    #+#             */
+/*   Updated: 2022/03/28 13:00:39 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isdigit(int c)
+
+/*
+	ft_isalpha -> checks (in ASCII TABLE) if c is a letter (Lowercase or Uppercase)
+*/
+int	ft_isalpha(int c)
 {
-	if (48 <= c && c <= 57)
+	if ((65 <= c && c <= 90) || (97 <= c && c <= 122))
+	{
 		return (1);
+	}
 	else
+	{
 		return (0);
+	}
 }

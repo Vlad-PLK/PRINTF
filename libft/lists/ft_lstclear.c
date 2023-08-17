@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpolojie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vpolojie <vpolojie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 11:19:18 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/03/23 18:11:15 by vpolojie         ###   ########.fr       */
+/*   Created: 2023/08/15 19:59:02 by vpolojie          #+#    #+#             */
+/*   Updated: 2023/08/15 20:05:52 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_tolower(int c)
+
+#include "libft.h"
+
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (65 <= c && c <= 90)
+	t_list	*tmp;
+
+	if (!lst || !del)
+		return ;
+	while (*lst)
 	{
-		c = c + 32;
-		return (c);
-	}
-	else
-	{
-		return (c);
+		(del)((*lst)->content);
+		tmp = *lst;
+		*lst = tmp->next;
+		free(lst);
 	}
 }
