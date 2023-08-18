@@ -6,7 +6,7 @@
 /*   By: vpolojie <vpolojie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 11:04:20 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/11/23 11:44:54 by vpolojie         ###   ########.fr       */
+/*   Updated: 2023/08/18 08:53:43 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_int_type(va_list list_arg, size_t *nb_cara)
 	int	nbr;
 
 	nbr = (int)va_arg(list_arg, int);
-	ft_putnbr_fd(nbr, 1, nb_cara);
+	ft_putnbr_fd2(nbr, 1, nb_cara);
 }
 
 void	ft_unsigned_int_type(va_list list_arg, size_t *nb_cara)

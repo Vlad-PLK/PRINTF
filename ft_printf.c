@@ -6,11 +6,12 @@
 /*   By: vpolojie <vpolojie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 08:39:39 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/11/23 12:15:40 by vpolojie         ###   ########.fr       */
+/*   Updated: 2023/08/18 09:30:17 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 void	ft_put_unsigned_nbr_fd(unsigned int nbr, int fd, size_t *nb_cara)
 {
@@ -21,8 +22,8 @@ void	ft_put_unsigned_nbr_fd(unsigned int nbr, int fd, size_t *nb_cara)
 	}
 	else
 	{
-		ft_putnbr_fd(nbr / 10, fd, nb_cara);
-		ft_putnbr_fd(nbr % 10, fd, nb_cara);
+		ft_putnbr_fd2(nbr / 10, fd, nb_cara);
+		ft_putnbr_fd2(nbr % 10, fd, nb_cara);
 	}
 }
 

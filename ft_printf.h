@@ -6,7 +6,7 @@
 /*   By: vpolojie <vpolojie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 11:07:30 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/11/23 11:51:56 by vpolojie         ###   ########.fr       */
+/*   Updated: 2023/08/18 08:53:27 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
+# include "libft.h"
 # include <stdarg.h>
 # include <stdlib.h>
 
-int		ft_strlen(char *str);
+int		ft_printf(const char *format, ...);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd);
-void	ft_putnbr_fd(int nbr, int fd, size_t *nb_cara);
+void	ft_putnbr_fd2(int nbr, int fd, size_t *nb_cara);
 void	ft_print_base(unsigned int nbr, char *base, size_t *nb_cara);
 void	ft_char_type(va_list list_arg, size_t *nb_cara);
 void	ft_str_type(va_list list_arg, size_t *nb_cara);

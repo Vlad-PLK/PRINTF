@@ -6,21 +6,11 @@
 /*   By: vpolojie <vpolojie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 11:05:45 by vpolojie          #+#    #+#             */
-/*   Updated: 2022/11/23 11:51:04 by vpolojie         ###   ########.fr       */
+/*   Updated: 2023/08/18 08:56:02 by vpolojie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
 
 void	ft_putchar_fd(char c, int fd)
 {
@@ -39,13 +29,13 @@ void	ft_putstr_fd(char *str, int fd)
 	}
 }
 
-void	ft_putnbr_fd(int nbr, int fd, size_t *nb_cara)
+void	ft_putnbr_fd2(int nbr, int fd, size_t *nb_cara)
 {
 	if (nbr == -2147483648)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(21474, fd, nb_cara);
-		ft_putnbr_fd(83648, fd, nb_cara);
+		ft_putnbr_fd2(21474, fd, nb_cara);
+		ft_putnbr_fd2(83648, fd, nb_cara);
 		(*nb_cara)++;
 	}
 	else if (0 <= nbr && nbr <= 9)
@@ -56,13 +46,13 @@ void	ft_putnbr_fd(int nbr, int fd, size_t *nb_cara)
 	else if (nbr < 0)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putnbr_fd((nbr * -1), fd, nb_cara);
+		ft_putnbr_fd2((nbr * -1), fd, nb_cara);
 		(*nb_cara)++;
 	}
 	else
 	{
-		ft_putnbr_fd(nbr / 10, fd, nb_cara);
-		ft_putnbr_fd(nbr % 10, fd, nb_cara);
+		ft_putnbr_fd2(nbr / 10, fd, nb_cara);
+		ft_putnbr_fd2(nbr % 10, fd, nb_cara);
 	}
 }
 
